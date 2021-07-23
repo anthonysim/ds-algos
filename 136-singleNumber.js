@@ -10,5 +10,3 @@ var singleNumber = function (nums) {
   }
   return Object.keys(hash)[0];
 };
-
-console.log(singleNumber([2, 2, 1]));
