@@ -9,4 +9,4 @@ var maxSubArray = function (nums) {
   return max;
 };
 
-console.log(maxSubArray([-1])) //6
+console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4])) //6
