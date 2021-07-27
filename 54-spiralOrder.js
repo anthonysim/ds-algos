@@ -21,22 +21,21 @@ var spiralOrder = function (matrix) {
       result.push(matrix[i][colEnd])
     }
     colEnd -= 1;
+
+    if (!(rowBegin <= rowEnd && colBegin <= colEnd)) break;
     //scan bottom right to left
-    if (rowBegin <= rowEnd) {
-      for (let i = colEnd; i >= colBegin; i--) {
-        result.push(matrix[rowEnd][i])
-      }
+
+    for (let i = colEnd; i >= colBegin; i--) {
+      result.push(matrix[rowEnd][i])
     }
     rowEnd -= 1;
     //scan left to top
-    if (colBegin <= colEnd) {
-      for (let i = rowEnd; i >= rowBegin; i--) {
-        result.push(matrix[i][colBegin])
-      }
+    for (let i = rowEnd; i >= rowBegin; i--) {
+      result.push(matrix[i][colBegin])
     }
-    colBegin += 1;
   }
+  colBegin += 1;
   return result;
 };
 
-console.log(spiralOrder([[1, 2, 3], [4, 5, 6], [7, 8, 9]]));
+console.log(spiralOrder([[1, 2, 3], [4, 5, 6], [7, 8, 9]])); // [1, 2, 3, 6, 9, 8, 7, 4, 5]
