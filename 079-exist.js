@@ -21,7 +21,6 @@ function dfs(board, i, j, remain) {
     || dfs(board, i, j + 1, remain.substring(1)) // checks right
     || dfs(board, i, j - 1, remain.substring(1)) // checks left
   );
-
   // if false, place char back in.
   board[i][j] = char;
 
