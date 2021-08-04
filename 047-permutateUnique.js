@@ -8,7 +8,7 @@ function permuteUnique(nums) {
       if (hash[nums]) {
         return;
       }
-      hash[nums.slice()] = nums.slice();
+      hash[nums] = nums.slice();
       res.push(nums.slice());
       return;
     }
