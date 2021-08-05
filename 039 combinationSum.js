@@ -1,15 +1,14 @@
 function combinationSum(candidates, target) {
   let res = [];
-  let total = 0;
 
   function dfs(i, target, temp) {
-    console.log(temp, total)
+    console.log(target, temp)
     if (target === 0) {
       res.push(temp.slice());
       return;
     }
 
-    if (total > target || i === candidates.length) {
+    if (target < 0 || i === candidates.length) {
       return;
     }
 
