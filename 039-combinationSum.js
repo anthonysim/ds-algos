@@ -1,23 +1,22 @@
-function combinationSum(candidates, target) {
-  let res = [];
+function combinationSum2(candidates, target) {
+  candidates = candidates.sort();
+  const res = [];
 
-  function dfs(i, target, temp) {
-    console.log(target, temp)
+  function dfs(pos, target, temp) {
     if (target === 0) {
       res.push(temp.slice());
-      return;
     }
 
-    if (target < 0 || i === candidates.length) {
-      return;
+    if (target < 0) return;
+
+    for (let i = pos; i < candidates.length; i++) {
+      if (i > pos && candidates[i] === candidates[i - 1]) continue;
+      temp.push(candidates[i]);
+      dfs(i + 1, target - candidates[i], temp);
+
+      temp.pop();
     }
-
-    temp.push(candidates[i]);
-    dfs(i, target - candidates[i], temp);
-
-    temp.pop();
-    dfs(i + 1, target, temp);
   }
   dfs(0, target, []);
   return res;
-
+};
