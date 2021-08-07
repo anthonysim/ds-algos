@@ -1,4 +1,4 @@
-var removeElement = function (nums, val) {
+function removeElement(nums, val) {
   let i = 0;
   for (let j = 0; j < nums.length; j++) {
     if (nums[j] !== val) {
