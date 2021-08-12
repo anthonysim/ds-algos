@@ -11,7 +11,6 @@ function subsets(nums) {
     dfs(i + 1, arr);
 
     subset.pop();
-    console.log(i, subset)
     dfs(i + 1, arr);
   }
   dfs(0, nums);

@@ -13,7 +13,6 @@ function letterCombinations(digits) {
 
   function backtrack(i, currentStr) {
     if (currentStr.length === digits.length) {
-      console.log(currentStr);
       res.push(currentStr);
       return;
     }
