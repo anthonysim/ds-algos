@@ -19,5 +19,5 @@ function rob(nums) {
   rob1 = helper(rob1);
   rob2 = helper(rob2);
 
-  return rob1 >= rob2 ? rob1 : rob2;
+  return Math.max(rob1, rob2);
 };
