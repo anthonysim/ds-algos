@@ -6,7 +6,9 @@ function longestMountain(arr) {
     if (arr[i - 1] < arr[i] && arr[i + 1] < arr[i]) {
       peaksArr.push(i);
     }
+
   }
+  if (peaksArr.length === 0) return 0;
   let max = -Infinity;
 
   for (let j = 0; j < peaksArr.length; j++) {
@@ -19,13 +21,13 @@ function longestMountain(arr) {
       leftIndex -= 1;
     }
 
-    while (arr[rightIndex + 1] < arr[rightIndex] && rightIndex >= 0) {
+    while (arr[rightIndex + 1] < arr[rightIndex] && rightIndex < arr.length) {
       count += 1;
       rightIndex += 1;
     }
     max = Math.max(max, count);
   }
-  return max === -Infinity ? 0 : max;
+  return max;
 };
 
-console.log(longestMountain([2, 1, 4, 7, 3, 2, 5]));
+console.log(longestMountain([2, 2, 2]));
