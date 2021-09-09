@@ -6,7 +6,6 @@ function longestMountain(arr) {
     if (arr[i - 1] < arr[i] && arr[i + 1] < arr[i]) {
       peaksArr.push(i);
     }
-
   }
   if (peaksArr.length === 0) return 0;
   let max = -Infinity;
