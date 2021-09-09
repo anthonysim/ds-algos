@@ -13,7 +13,6 @@ def isPalindrome(str):
 
     while left < right:
         if string[left] != string[right]:
-            print(string[left], string[right])
             return False
 
         left += 1
