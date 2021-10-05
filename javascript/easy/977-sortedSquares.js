@@ -1,4 +1,4 @@
-function sortedSquares(nums) {
-  let res = nums.map(num => num * num).sort((a, b) => a - b);
-  return res;
+var sortedSquares = function (nums) {
+  let result = nums.map(num => Math.pow(num, 2)).sort((a, b) => a - b);
+  return result;
 };
