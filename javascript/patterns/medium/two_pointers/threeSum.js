@@ -14,14 +14,13 @@ function threeSum(nums) {
         res.push([cur, nums[left], nums[right]]);
         left += 1;
         right -= 1;
-      }
-
-      else if (sum < 0) {
+      } else if (sum < 0) {
         left += 1;
       } else {
         right -= 1;
       }
     }
+
     while (nums[i + 1] === nums[i]) {
       i += 1;
     }
