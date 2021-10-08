@@ -1,13 +1,13 @@
 function lengthOfLongestSubstring(str) {
-  let hash = [];
-  let res = 0;
+  let wordArr = [];
+  let max = 0;
 
   for (let char of str) {
-    while (hash.includes(char)) {
-      hash = hash.splice(1)
+    while (wordArr.includes(char)) {
+      wordArr = wordArr.splice(1);
     }
-    hash.push(char);
-    res = Math.max(res, Object.keys(hash).length);
+    wordArr.push(char);
+    max = Math.max(max, wordArr.length);
   }
-  return res;
+  return max;
 };
