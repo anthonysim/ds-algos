@@ -1,4 +1,4 @@
-var spiralOrder = function (matrix) {
+function spiralOrder(matrix) {
   let result = [];
 
   if (matrix.length == 0) {
