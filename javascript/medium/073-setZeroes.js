@@ -12,6 +12,7 @@ var setZeroes = function (matrix) {
       }
     }
   }
+
   // using the zerosArr, change all the rows & cols to zeros.
   for (let i = 0; i < rowLength; i++) {
     for (let j = 0; j < colLength; j++) {
@@ -22,3 +23,11 @@ var setZeroes = function (matrix) {
   }
   return matrix;
 };
+
+console.log(setZeroes(
+  [
+    [1, 1, 1],
+    [1, 0, 1],
+    [1, 1, 1]
+  ]
+));

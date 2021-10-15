@@ -13,3 +13,5 @@ function coinChange(coins, amount) {
   }
   return table[table.length - 1] === Infinity ? - 1 : table[table.length - 1];
 }
+
+console.log(coinChange([1, 2, 5], 11));
