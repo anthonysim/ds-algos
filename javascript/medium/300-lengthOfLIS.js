@@ -12,5 +12,3 @@ function lengthOfLIS(nums) {
   }
   return Math.max(...arr);
 }
-
-console.log(lengthOfLIS([0, 1, 0, 3, 2, 3]));
