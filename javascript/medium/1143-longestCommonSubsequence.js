@@ -19,5 +19,5 @@ function longestCommonSubsequence(text1, text2) {
   return dp[n][m];
 };
 
-console.log(longestCommonSubsequence("abcde", "abc"));
+console.log(longestCommonSubsequence("abcde", "abc")); // 3
 
