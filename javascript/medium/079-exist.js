@@ -1,16 +1,13 @@
 function dfs(board, i, j, remain) {
   // if it reached the very end and finds every char, return true;
-  if (remain.length === 0) {
-    return true;
-  }
+  if (remain.length === 0) return true;
+
   // if it reaches outside of the board or no match, return false;
-  if (i < 0 || i >= board.length || j < 0 || j >= board[0].length) {
-    return false;
-  }
+  if (i < 0 || i >= board.length || j < 0 || j >= board[0].length) return false;
+
   // return false if there is no match
-  if (board[i][j] !== remain[0]) {
-    return false;
-  }
+  if (board[i][j] !== remain[0]) return false;
+
   // cross out already visited
   let char = board[i][j];
   board[i][j] = '-';
@@ -29,9 +26,7 @@ function dfs(board, i, j, remain) {
 
 function exist(board, word) {
   // if the board or word is empty, return false;
-  if (board.length === 0 || word.length === 0) {
-    return false;
-  }
+  if (board.length === 0 || word.length === 0) return false;
 
   // potentially iterates through every single item in the matrix.
   for (let i = 0; i < board.length; i++) {
