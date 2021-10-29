@@ -3,6 +3,7 @@ function longestPalindrome(str) {
   let len = 0;
 
   for (let i = 0; i < str.length; i++) {
+    // checks odds
     let left = i;
     let right = i;
 
@@ -14,6 +15,7 @@ function longestPalindrome(str) {
       left -= 1;
       right += 1;
     }
+    // checks evens
     left = i;
     right = i + 1;
 

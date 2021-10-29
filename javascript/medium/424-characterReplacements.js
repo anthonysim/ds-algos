@@ -5,7 +5,7 @@ function characterReplacement(str, k) {
   let maxf = 0;
 
   for (let right = 0; right < str.length; right++) {
-    count[str[right]] = count[str[right]] ? count[str[right]] + 1 : 1;
+    count[str[right]] = count[str[right]] + 1 || 1;
     maxf = Math.max(maxf, count[str[right]]);
 
     while ((right - left + 1) - maxf > k) {
