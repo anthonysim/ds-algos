@@ -9,6 +9,7 @@ class TreeNode {
   }
 }
 
+
 function isSameTree(s: TreeNode | null, t: TreeNode | null): boolean {
   if (s === null || t === null) return s === null && t === null;
   if (s.val === t.val) {
