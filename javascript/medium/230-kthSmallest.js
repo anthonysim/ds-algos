@@ -1,6 +1,6 @@
 function kthSmallest(root, k) {
-  if (root === null) return null;
-  let res = [];
+  if (root === null) return -1;
+  const res = [];
 
   function dfs(node) {
     if (node.left) dfs(node.left);
@@ -8,6 +8,5 @@ function kthSmallest(root, k) {
     if (node.right) dfs(node.right);
   }
   dfs(root);
-  console.log(res)
   return res[k - 1];
 };
