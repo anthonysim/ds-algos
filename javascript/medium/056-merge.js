@@ -3,7 +3,7 @@ function merge(intervals) {
 
   const res = [intervals[0]];
   for (let curr of intervals) {
-    let prev = res[res.length - 1]
+    let prev = res[res.length - 1];
 
     if (prev[1] >= curr[0]) {
       prev[1] = Math.max(curr[1], prev[1]);
