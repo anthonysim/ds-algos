@@ -6,7 +6,7 @@ function eraseOverlapIntervals(intervals) {
 
   for (let i = 1; i < intervals.length; i++) {
     if (intervals[i][0] < intervals[prev][1]) {
-      count++;
+      count += 1;
     } else {
       prev = i;
     }
