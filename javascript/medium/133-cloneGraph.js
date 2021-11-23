@@ -3,7 +3,7 @@ function cloneGraph(node) {
   const visited = {};
 
   // DFS function to copy graph
-  const dfs = (node) => {
+  function dfs(node) {
     if (!node) return node;
     // If we have seen this node before, return it
     if (visited[node.val] != null) return visited[node.val];
