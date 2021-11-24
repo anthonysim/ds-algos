@@ -10,7 +10,7 @@ function cloneGraph(node) {
 
     // Create base for copied node
     const root = new Node(node.val);
-    // Add this copied node to group of nodes we hav copied
+    // Add this copied node to group of nodes we have copied
     visited[node.val] = root;
 
     // Add copied neighbors to the current copied node
