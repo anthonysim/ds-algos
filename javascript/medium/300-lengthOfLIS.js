@@ -5,10 +5,12 @@ function lengthOfLIS(nums) {
 
   for (let i = 1; i < nums.length; i++) {
     for (let j = 0; j < i; j++) {
-      if (nums[i] > nums[j]) {
+      if (nums[j] < nums[i]) {
         arr[i] = Math.max(arr[i], arr[j] + 1);
       }
     }
   }
   return Math.max(...arr);
 }
+
+console.log(lengthOfLIS([10, 9, 2, 5, 3, 7, 101, 18])); // 4
