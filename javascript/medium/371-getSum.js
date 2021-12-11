@@ -1,8 +1,11 @@
 var getSum = function (a, b) {
   while (b) {
-    let carry = a & b;
+    // temp variable holds "and" so its not overridden below
+    let temp = a & b;
+    // compares a and b 1 ^ 1 = 0 |  1 ^ 0 = 1
     a ^= b;
-    b = carry << 1;
+    // compares a and b then shifts everything to the left 1 & 1 = 1 | 1 & 0 = 0 | 0 & 0 = 1
+    b = temp << 1;
   }
   return a;
 };
