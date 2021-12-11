@@ -10,4 +10,15 @@ var getSum = function (a, b) {
   return a;
 };
 
-console.log(getSum(1, 2)); // 3
+console.log(getSum(2, 3)); // 5
+
+
+// bits 8 4 2 1
+// ------------
+//      0 0 1 0 --> 2
+//      0 0 1 1 --> 3
+// ------------
+//      0 0 0 1
+//      0 1 0 0
+
+// total is 5 bits
