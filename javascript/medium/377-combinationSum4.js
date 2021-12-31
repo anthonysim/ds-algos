@@ -1,20 +1,19 @@
 var combinationSum4 = function (nums, target) {
-  const dp = Array(target + 1).fill(0);
+  let dp = new Array(target + 1).fill(0);
   dp[0] = 1;
 
-  for (let i = 1; i <= target; i++) {
-    for (const n of nums) {
-      if (i - n >= 0) {
-        dp[i] += dp[i - n];
+  for (let i = 1; i < dp.length; i++) {
+    for (let num of nums) {
+      if (i - num >= 0) {
+        dp[i] += dp[i - num];
       }
     }
   }
-
-  return dp[target];
+  return dp[dp.length - 1];
 };
 
 // Notes: basically adding backwards
-// example i = 4, n = 1, 2, 3
+// example i = 4, num = 1, 2, 3
 // 4 - 1 = 3
 // 4 - 2 = 2
 // 4 - 3 = 1
