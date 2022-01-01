@@ -13,7 +13,8 @@ function threeSumClosest(arr, target) {
 
       if (Math.abs(diff) < Math.abs(min)) min = diff;
 
-      if (total < target) {
+      if (total === target) {
+      } else if (total < target) {
         left += 1;
       } else {
         right -= 1;
