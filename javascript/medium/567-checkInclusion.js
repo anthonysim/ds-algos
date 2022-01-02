@@ -17,11 +17,15 @@ var checkInclusion = function (str1, str2) {
     while (i - start + 1 > str1.length) {
       let leftChar = str2[start];
       start += 1;
-
-      if (leftChar in hash) hash[leftChar] += 1;
       if (hash[leftChar] === 0) matched -= 1;
+      if (leftChar in hash) hash[leftChar] += 1;
     }
-    if (Math.max(...Object.values(hash)) === 0) return true;
+    if (Object.values(hash).every(num => num === 0)) return true;
   }
   return false;
 };
+
+console.log(checkInclusion('ab', 'eidbaooo')); // true
+console.log(checkInclusion('ab', 'eidboaoo')); // false
+console.log(checkInclusion('adc', 'dcda')); // true
+console.log(checkInclusion('a', 'ab')); // true
