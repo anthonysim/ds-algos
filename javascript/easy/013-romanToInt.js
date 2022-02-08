@@ -12,13 +12,13 @@ var romanToInt = function (str) {
   let total = 0;
 
   for (let i = 0; i < str.length; i++) {
-    let first = code[str[i]];
-    let second = code[str[i + 1]];
+    let current = code[str[i]];
+    let next = code[str[i + 1]];
 
-    if (first < second) {
-      total -= first;
+    if (current < next) {
+      total -= current;
     } else {
-      total += first;
+      total += current;
     }
   }
   return total;
