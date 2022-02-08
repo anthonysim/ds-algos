@@ -1,3 +1,8 @@
+/*
+if the current number is less than the next number then subtract the current
+number from the running total, else add the current number to the running total.
+*/
+
 var romanToInt = function (str) {
   const code = {
     'I': 1,
