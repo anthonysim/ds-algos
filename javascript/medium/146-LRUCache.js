@@ -17,5 +17,6 @@ LRUCache.prototype.put = function (key, value) {
   if (this.map.has(key)) this.map.delete(key);
   this.map.set(key, value);
 
+  // keys().next().value returns first item's key
   if (this.map.size > this.capacity) this.map.delete(this.map.keys().next().value);
 }
