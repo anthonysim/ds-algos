@@ -19,7 +19,6 @@ var merge = function (l1, l2) {
 }
 
 
-
 var mergeKLists = function (lists) {
   let root = lists[0];
 
