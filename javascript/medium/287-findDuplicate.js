@@ -1,10 +1,20 @@
 var findDuplicate = function (nums) {
-  const hash = {};
-  for (let num of nums) {
-    if (!hash[num]) {
-      hash[num] = 1;
-    } else {
-      return num;
-    }
+  let slow = 0;
+  let fast = 0;
+
+  while (true) {
+    slow = nums[slow];
+    fast = nums[nums[fast]];
+
+    if (slow === fast) break;
   }
+
+  let current = 0;
+  while (true) {
+    slow = nums[slow];
+    current = nums[current];
+
+    if (current === slow) break;
+  }
+  return slow;
 };
