@@ -1,5 +1,11 @@
-function buildDirectedGraph(edges) {
-  const graph = {};
+/**
+ * @param {number} numCourses
+ * @param {number[][]} prerequisites
+ * @return {boolean}
+ */
+// Building a graph
+function buildDirectedGraph(numCourses, edges) {
+  const graph = [...new Array(numCourses)].map(() => []);
 
   for (let edge of edges) {
     const [a, b] = edge;
@@ -12,39 +18,37 @@ function buildDirectedGraph(edges) {
 };
 
 
+
 function canFinish(numCourses, prerequisites) {
-  if (!prerequisites.length) return true;
 
-  const courseGraph = buildDirectedGraph(prerequisites.slice(0));
-  const discovered = new Set();
-  const coursesTaken = [];
-  const processing = new Set();
-  let hasCycle = false;
+  // depth first search
+  function dfs(course) {
+    if (seen.has(course)) return true;
+    if (seeing.has(course)) return false;
 
-  const depthFirstSearch = node => {
-    if (processing.has(node)) {
-      hasCycle = true;
-      return;
+    const graph = buildDirectedGraph(numCourses, prerequisites)
+    if (graph === undefined) return true;
+    console.log(graph)
+    seeing.add(course);
+    for (let neighbor of graph[course]) {
+      if (!dfs(neighbor)) {
+        return false;
+      }
     }
+    seeing.delete(course);
+    seen.add(course);
 
-    if (hasCycle) return;
-    if (discovered.has(node)) return;
-
-    discovered.add(node);
-    processing.add(node);
-
-    courseGraph[node].forEach(depthFirstSearch);
-
-    processing.delete(node);
-    coursesTaken.push(node);
-  };
-
-  for (let i = 0; i < prerequisites.length; i++) {
-    const node = prerequisites[i][0];
-    depthFirstSearch(node);
+    return true;
   }
 
-  return !hasCycle;
+  const seen = new Set();
+  const seeing = new Set();
+
+  for (let i = 0; i < numCourses; i++) {
+    if (!dfs(i)) return false;
+  }
+  return true;
 };
+
 
 console.log(canFinish(2, [[1, 0]])); // true
