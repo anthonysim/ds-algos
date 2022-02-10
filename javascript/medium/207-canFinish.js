@@ -1,9 +1,3 @@
-/**
- * @param {number} numCourses
- * @param {number[][]} prerequisites
- * @return {boolean}
- */
-// Building a graph
 function buildDirectedGraph(numCourses, edges) {
   const graph = [...new Array(numCourses)].map(() => []);
 
@@ -20,15 +14,15 @@ function buildDirectedGraph(numCourses, edges) {
 
 
 function canFinish(numCourses, prerequisites) {
+  const graph = buildDirectedGraph(numCourses, prerequisites);
+  const seen = new Set();
+  const seeing = new Set();
 
   // depth first search
   function dfs(course) {
     if (seen.has(course)) return true;
     if (seeing.has(course)) return false;
 
-    const graph = buildDirectedGraph(numCourses, prerequisites)
-    if (graph === undefined) return true;
-    console.log(graph)
     seeing.add(course);
     for (let neighbor of graph[course]) {
       if (!dfs(neighbor)) {
@@ -41,14 +35,8 @@ function canFinish(numCourses, prerequisites) {
     return true;
   }
 
-  const seen = new Set();
-  const seeing = new Set();
-
   for (let i = 0; i < numCourses; i++) {
     if (!dfs(i)) return false;
   }
   return true;
 };
-
-
-console.log(canFinish(2, [[1, 0]])); // true
