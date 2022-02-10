@@ -25,7 +25,6 @@ MyHashMap.prototype.get = function (key) {
 };
 
 MyHashMap.prototype.remove = function (key) {
-
   for (let i = 0; i < this.storage.length; i++) {
     let item = this.storage[i];
 
