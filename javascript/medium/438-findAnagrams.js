@@ -11,22 +11,22 @@ var findAnagrams = function (str, pattern) {
   }, {})
 
   for (let i = 0; i < str.length; i++) {
-    let char = str[i];
+    let rightChar = str[i];
 
-    if (char in hash) hash[char] -= 1;
-    if (hash[char] === 0) matched += 1;
+    if (rightChar in hash) hash[rightChar] -= 1;
+    if (hash[rightChar] === 0) matched += 1;
     // push index to res if match
     if (matched === Object.keys(hash).length) res.push(start);
 
     // if the permutation isn't found, but the length is the same as the pattern
     if (i >= pattern.length - 1) {
-      let letter = str[start];
+      let leftChar = str[start];
       start += 1;
 
-      // if the letter is in the hash, remove the match and increase the count.
-      if (letter in hash) {
-        if (hash[letter] === 0) matched -= 1;
-        hash[letter] += 1;
+      // if the leftChar is in the hash, remove the match and increase the count.
+      if (leftChar in hash) {
+        if (hash[leftChar] === 0) matched -= 1;
+        hash[leftChar] += 1;
       }
     }
   }
