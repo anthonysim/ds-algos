@@ -1,3 +1,5 @@
+// Uses an InOrder DFS, the returns the kth element of the results
+
 function kthSmallest(root, k) {
   if (root === null) return -1;
   const res = [];
@@ -10,3 +12,6 @@ function kthSmallest(root, k) {
   dfs(root);
   return res[k - 1];
 };
+
+// Time Complexity, O(V + E)
+// Space Complexity, O(V)
