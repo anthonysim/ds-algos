@@ -19,3 +19,6 @@ var maxDepth = function (root) {
   }
   return depth;
 };
+
+// Time Complexity O(n), touches every single node and edge.
+// Space Complexity O(n), every node gets stored in the queue.
