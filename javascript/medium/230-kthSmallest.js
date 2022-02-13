@@ -1,4 +1,4 @@
-// Uses an InOrder DFS, the returns the kth element of the results
+// Uses an PreOrder DFS, the returns the kth element of the results
 
 function kthSmallest(root, k) {
   if (root === null) return -1;
