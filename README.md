@@ -1,3 +1,3 @@
 # leetcode
 
-A collection of leetcode problems I did to practice for interviews.
+A collection of coding problems I did to practice for interviews.
