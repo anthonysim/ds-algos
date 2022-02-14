@@ -40,7 +40,7 @@ function spiralOrder(matrix) {
 
 console.log(spiralOrder([[1, 2, 3], [4, 5, 6], [7, 8, 9]])); // [1, 2, 3, 6, 9, 8, 7, 4, 5]
 
-// Let MM be the number of rows and NN be the number of columns.
-// Time complexity: O(M \cdot N)O(M⋅N). This is because we visit each element once.
-//Space complexity: O(1)O(1). This is because we don't use other data structures. Remember that we don't include the output array in the space complexity.
+// Time complexity: (M⋅N). This is because we visit each element once.
+
+//Space complexity: (1). This is because we don't use other data structures. Remember that we don't include the output array in the space complexity.
 1
