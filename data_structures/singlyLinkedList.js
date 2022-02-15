@@ -70,10 +70,37 @@ class LinkedList {
     this.length += 1;
     return this;
   }
+  // get node at a specific position
+  get(index) {
+    if (this.head === null || index >= this.count) return null;
+
+    let current = this.head;
+    let counter = 0;
+
+    while (counter !== index) {
+      current = current.next;
+      counter += 1;
+    }
+    return current;
+  }
+
+  // update at a particular node
+  set(index, val) {
+    let foundNode = this.get(index);
+
+    if (foundNode) {
+      foundNode.val = val;
+      return true;
+    }
+    return false;
+  }
 }
 
 let list = new LinkedList();
-list.push('HELLO');
-list.push('GOODBYE');
+list.push(1);
+list.push(2);
+list.push(3);
+list.push(4);
+list.push(5);
 
-console.log(list);
+list.set(2, "hello world!");
