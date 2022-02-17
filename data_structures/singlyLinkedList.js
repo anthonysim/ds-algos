@@ -11,6 +11,7 @@ class LinkedList {
     this.tail = null
     this.length = 0;
   }
+
   // adds nodes to linkedlist
   push(val) {
     let newNode = new Node(val);
@@ -25,7 +26,8 @@ class LinkedList {
     this.length += 1;
     return this;
   }
-  // removes nodes to linkedlist
+
+  // removes nodes from end of linkedlist
   pop() {
     let temp = null;
     let current = this.head;
@@ -42,9 +44,9 @@ class LinkedList {
       this.head = null;
       this.tail = null;
     }
-
     return current;
   }
+
   // deletes head and moved it over
   shift() {
     if (this.head === null) {
@@ -70,6 +72,7 @@ class LinkedList {
     this.length += 1;
     return this;
   }
+
   // get node at a specific position
   get(index) {
     if (this.head === null || index >= this.count) return null;
