@@ -12,7 +12,10 @@ var addTwoNumbers = function (l1, l2) {
   while (l1 || l2 || carry) {
     const sum = (l1 ? l1.val : 0) + (l2 ? l2.val : 0) + carry;
 
+    // dividing by 10 to find the number thats over 10 that's carried to the next iteration
     carry = Math.floor(sum / 10);
+
+    // modulo by 1- to find the number that's placed into linkedlist
     curr.next = new ListNode(sum % 10);
 
     if (l1) l1 = l1.next;
