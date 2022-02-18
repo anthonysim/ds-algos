@@ -113,6 +113,34 @@ class LinkedList {
     this.length += 1;
     return true;
   }
+
+  // removes node from linkedlist
+  remove(index) {
+    if (index < 0 || index >= this.length) return null;
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop();
+
+    let prev = this.get(index - 1);
+    let removed = prev.next;
+    prev.next = removed.next;
+    this.length -= 1;
+
+    return removed;
+  }
+
+  reverse() {
+    let current = this.head;
+    let prev = null;
+    let temp = null;
+
+    while (current) {
+      temp = current.next;
+      current.next = prev;
+      prev = current;
+      current = temp;
+    }
+    return prev;
+  }
 }
 
 let list = new LinkedList();
@@ -121,5 +149,5 @@ list.push(2);
 list.push(3);
 list.push(4);
 list.push(5);
-
-list.set(2, "hello world!");
+console.log(list.reverse());
+// list.set(2, "hello world!");
