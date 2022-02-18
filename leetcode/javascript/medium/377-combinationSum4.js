@@ -13,17 +13,25 @@ var combinationSum4 = function (nums, target) {
 };
 
 // Notes: basically adding backwards
-// example i = 4, num = 1, 2, 3
-// 4 - 1 = 3
-// 4 - 2 = 2
-// 4 - 3 = 1
+// 1 - 1 =  0 >= 0 true
+// 1 - 2 = -1 >= 0 false
+// 1 - 3 = -2 >= 0 false
 
-// 7 = nums[3] + nums[2] + nums[1];
+// 2 - 1 =  1 >= 0 true
+// 2 - 2 =  0 >= 0 true
+// 2 - 3 = -1 >= 0 false
+
+// 3 - 1 = 2 >= 0 true
+// 3 - 2 = 1 >= 0 true
+// 3 - 3 = 0 >= 0 true
+
+// 4 - 1 = 3 >= 0 true
+// 4 - 2 = 2 >= 0 true
+// 4 - 3 = 1 >= 0 true
 
 // dp = [1, 0, 0, 0, 0];
 // dp = [1, 1, 0, 0, 0];
 // dp = [1, 1, 2, 0, 0];
-// dp = [1, 1, 2, 4, 0];
-
+// dp = [1, 1, 2, 4, 7];
 // ----------------------
-// dp = [1, 1, 2, 4, 6];
+// dp = [1, 1, 2, 4, 7];
