@@ -1,18 +1,6 @@
-/**
- * @param {number[][]} intervals
- * @return {number}
- */
 var minMeetingRooms = function (intervals) {
-  let startTimes = [];
-  let endTimes = [];
-
-  for (let i = 0; i < intervals.length; i++) {
-    startTimes.push(intervals[i][0]);
-    endTimes.push(intervals[i][1]);
-  }
-
-  startTimes.sort((a, b) => a - b);
-  endTimes.sort((a, b) => a - b);
+  let startTimes = intervals.map(num => num[0]).sort((a, b) => a - b);
+  let endTimes = intervals.map(num => num[1]).sort((a, b) => a - b);;
 
   let max = 0;
   let count = 0;
@@ -31,3 +19,7 @@ var minMeetingRooms = function (intervals) {
   }
   return max;
 };
+
+// Time Complexity: O(NlogN) because all we are doing is sorting the two arrays for start timings and end timings individually and each of them would contain NN elements considering there are NN intervals.
+
+// Space Complexity: O(N) because we create two separate arrays of size NN, one for recording the start times and one for the end times.

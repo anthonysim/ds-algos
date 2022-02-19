@@ -1,28 +1,17 @@
-var minMeetingRooms = function (intervals) {
-  let startTimes = intervals.map(num => num[0]).sort((a, b) => a - b);
-  let endTimes = intervals.map(num => num[1]).sort((a, b) => a - b);;
+function countNodes(root) {
+  if (root === null) return 0;
 
-  startTimes.sort((a, b) => a - b);
-  endTimes.sort((a, b) => a - b);
-
-  let max = 0;
+  let queue = [root];
   let count = 0;
-  let s = 0;
-  let e = 0;
+  while (queue.length) {
+    let len = queue.length;
 
-  while (s < startTimes.length) {
-    if (startTimes[s] < endTimes[e]) {
-      s += 1;
+    for (let i = 0; i < len; i++) {
+      let node = queue.shift();
       count += 1;
-    } else {
-      e += 1;
-      count -= 1;
+      if (node.left) queue.push(node.left);
+      if (node.right) queue.push(node.right);
     }
-    max = Math.max(max, count);
   }
-  return max;
+  return count;
 };
-
-// Time Complexity: O(NlogN) because all we are doing is sorting the two arrays for start timings and end timings individually and each of them would contain NN elements considering there are NN intervals.
-
-// Space Complexity: O(N) because we create two separate arrays of size NN, one for recording the start times and one for the end times.
