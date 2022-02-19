@@ -28,7 +28,6 @@ function hasPath(graph, src, dst, visited) {
 
 function undirectedPath(edges, nodeA, nodeB) {
   const graph = buildGraph(edges);
-
   return hasPath(graph, nodeA, nodeB, new Set());
 }
 
