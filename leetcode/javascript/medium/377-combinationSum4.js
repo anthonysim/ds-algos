@@ -12,6 +12,9 @@ var combinationSum4 = function (nums, target) {
   return dp[dp.length - 1];
 };
 
+// Time Complexity: (TN)
+// Space Complexity: (T)
+
 // Notes: basically adding backwards
 // 1 - 1 =  0 >= 0 true
 // 1 - 2 = -1 >= 0 false
