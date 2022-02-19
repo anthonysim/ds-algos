@@ -31,4 +31,4 @@ const graph = {
   k: [],
 }
 
-console.log(hasPath(graph, 'f', 'k'));
+console.log(hasPath(graph, 'f', 'k')); // true
