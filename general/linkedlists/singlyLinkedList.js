@@ -128,6 +128,7 @@ class LinkedList {
     return removed;
   }
 
+  // reverses the order of linked list
   reverse() {
     let current = this.head;
     let prev = null;
