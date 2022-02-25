@@ -1,12 +1,17 @@
 var reverseWords = function (str) {
-  let strArr = str.split(' ').filter(item => item.length !== 0);
-  let res = '';
+  let strArr = str.split(' ').filter(word => word !== '');
 
+  let strBuilder = '';
   let i = strArr.length - 1;
 
-  while (i >= 0) {
-    res += strArr[i] + ' ';
+  while (i > 0) {
+    strBuilder += strArr[i] + ' ';
     i -= 1;
   }
-  return res.trim();
+  strBuilder += strArr[i];
+  return strBuilder;
 };
+
+// var reverseWords = function(str) {
+//   return str.split(' ').filter(word => word !== '').reverse().join(' ');
+// };
