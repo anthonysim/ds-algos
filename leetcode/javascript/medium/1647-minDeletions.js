@@ -1,8 +1,9 @@
 var minDeletions = function (str) {
-  const freq = {};
-  for (let c of str) {
-    freq[c] = (freq[c] || 0) + 1;
-  }
+  const freq = str.split('').reduce((acc, val) => {
+    if (!acc[val]) acc[val] = 0;
+    acc[val] += 1;
+    return acc;
+  }, {});
 
   let values = Object.values(freq).sort((a, b) => a - b);
   let set = new Set();
@@ -22,3 +23,4 @@ var minDeletions = function (str) {
 
 console.log(minDeletions('aab')); // 0
 console.log(minDeletions('aaabbbcc')); // 2
+console.log(minDeletions('ceabaacb')); // 2
