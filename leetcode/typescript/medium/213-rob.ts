@@ -20,3 +20,6 @@ function rob(nums: number[]): number {
 
   return Math.max(robber(first), robber(second));
 };
+
+console.log(rob([2, 3, 2])); //3
+console.log(rob([1, 2, 3, 1])); //4
