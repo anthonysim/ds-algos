@@ -21,3 +21,5 @@ function longestCommonSubsequence(text1, text2) {
 
 console.log(longestCommonSubsequence("abcde", "abc")); // 3
 
+// time: O(m * n)
+// space: O(m * n)
