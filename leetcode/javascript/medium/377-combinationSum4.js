@@ -12,8 +12,8 @@ var combinationSum4 = function (nums, target) {
   return dp[dp.length - 1];
 };
 
-// Time Complexity: (TN)
-// Space Complexity: (T)
+// Time Complexity: O(N * M)
+// Space Complexity: O(N * M)
 
 // Notes: basically adding backwards
 // 1 - 1 =  0 >= 0 true

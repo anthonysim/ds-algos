@@ -11,3 +11,5 @@ function reverseList(head) {
   }
   return prev;
 };
+
+// time: O(n)
