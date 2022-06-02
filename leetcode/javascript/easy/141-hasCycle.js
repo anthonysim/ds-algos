@@ -12,3 +12,5 @@ var hasCycle = function (head) {
   }
   return false;
 };
+
+// time: O(n)

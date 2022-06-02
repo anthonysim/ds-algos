@@ -44,3 +44,5 @@ let board = [["A", "B", "C", "E"], ["S", "F", "C", "S"], ["A", "D", "E", "E"]]
 let word = "ABCCED"
 
 console.log(exist(board, word))
+
+// time: O(n * m 4^n)
