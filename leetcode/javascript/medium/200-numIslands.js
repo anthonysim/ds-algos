@@ -33,3 +33,5 @@ const grid = [
 ]
 
 console.log(numIslands(grid)); // 3
+
+// time and space: O(m * n)
