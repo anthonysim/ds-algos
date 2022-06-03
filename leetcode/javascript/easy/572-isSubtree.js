@@ -16,4 +16,6 @@ function isSubtree(s, t) {
   return isSubtree(s.left, t) || isSubtree(s.right, t);
 };
 
+// time: O(n * m) size of both trees multiplied to each other
+// space: O(1)
 
