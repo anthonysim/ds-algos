@@ -8,3 +8,6 @@ function isValidBST(root) {
   }
   return dfs(root, -Infinity, Infinity);
 }
+
+// time: O(n)
+// space: O(n)
