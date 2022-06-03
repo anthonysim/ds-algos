@@ -23,3 +23,6 @@ var mergeTwoLists = function (l1, l2) {
   }
   return tempNode.next;
 };
+
+// time: O(n + m)
+// space: O(1)
