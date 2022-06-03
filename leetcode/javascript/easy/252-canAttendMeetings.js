@@ -9,3 +9,7 @@ var canAttendMeetings = function (intervals) {
   }
   return true;
 };
+
+// time: O(nlog(n)) because of the sort method after the n is dropped
+// O(nlog(n) + n) --> O(nlog(n))
+// space: O(1)
