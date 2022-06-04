@@ -4,7 +4,6 @@ var countNegatives = function (grid) {
   let j = grid[0].length - 1;
   let width = grid[0].length - 1;
 
-
   while (i < grid.length && j >= -1) {
     if (grid[i][j] >= 0 || j < 0) {
       count += (width - j);
@@ -17,3 +16,4 @@ var countNegatives = function (grid) {
 }
 
 // time: O(n + m)
+// space: O(1)
