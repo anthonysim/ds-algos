@@ -24,10 +24,9 @@ var minWindow = function (str, target) {
 
       const leftChar = str[start];
       start += 1;
-      if (leftChar in hash) {
-        if (hash[leftChar] === 0) matched -= 1;
-        hash[leftChar] += 1;
-      }
+
+      if (hash[leftChar] === 0) matched -= 1;
+      if (leftChar in hash) hash[leftChar] += 1;
     }
   }
   return min === Infinity ? '' : str.slice(substrStart, substrStart + min);
