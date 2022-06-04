@@ -6,3 +6,5 @@ function climbStairs(n, hash = {}) {
   hash[n] = climbStairs(n - 1, hash) + climbStairs(n - 2, hash);
   return hash[n];
 };
+
+// time and space: O(n)
