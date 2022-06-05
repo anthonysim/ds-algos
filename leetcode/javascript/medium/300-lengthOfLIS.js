@@ -14,3 +14,6 @@ function lengthOfLIS(nums) {
 }
 
 console.log(lengthOfLIS([10, 9, 2, 5, 3, 7, 101, 18])); // 4
+
+// time: O(n^2)
+// space: O(n)
