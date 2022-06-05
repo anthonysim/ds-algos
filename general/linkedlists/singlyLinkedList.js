@@ -56,6 +56,11 @@ class LinkedList {
       this.head = currentHead.next;
       this.length -= 1;
     }
+
+    if (this.length === 0) {
+      this.head = null;
+      this.tail = null;
+    }
     return currentHead;
   }
   // add new head
