@@ -113,7 +113,7 @@ class LinkedList {
     let prev = this.get(index - 1);
     let temp = prev.next;
     prev.next = newNode;
-    newNodex.next = temp;
+    newNode.next = temp;
 
     this.length += 1;
     return true;
