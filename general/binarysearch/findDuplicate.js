@@ -9,8 +9,10 @@ function findDuplicate(arr) {
 
     if (arr[mid] === arr[mid + 1] || arr[mid] === arr[mid - 1]) {
       return arr[mid];
+
     } else if ((arr[left] + arr[right]) / 2 == arr[mid]) {
       left = mid + 1;
+
     } else {
       right = mid - 1;
     }
