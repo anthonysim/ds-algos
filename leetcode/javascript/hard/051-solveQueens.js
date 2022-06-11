@@ -41,3 +41,4 @@ function solveNQueens(n) {
 }
 
 // time O(n!)
+// space: O(n^2)
