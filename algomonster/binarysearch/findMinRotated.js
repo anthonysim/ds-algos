@@ -3,20 +3,20 @@
 function findMinRotated(arr) {
     let left = 0;
     let right = arr.length - 1;
-    let boundary = -1;
 
-    while (left <= right) {
+    while (left < right) {
         let mid = Math.floor((left + right) / 2);
 
         if (arr[mid] > arr[right]) {
             left = mid + 1;
         } else {
-            right = mid - 1;
-            boundary = mid;
+            right = mid;
         }
     }
-    return boundary;
-} i
+    return left;
+}
+
+console.log(findMinRotated([30, 40, 50, 10, 20]));
 
 console.log(findFirstOccurrence([30, 40, 50, 10, 20])); // index at 3
 

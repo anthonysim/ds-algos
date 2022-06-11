@@ -1,3 +1,4 @@
+// version 1
 var maxDepth = function (root) {
   if (root === null) {
     return null;
@@ -19,6 +20,13 @@ var maxDepth = function (root) {
   }
   return depth;
 };
+
+// version 2
+var maxDepth = function (root) {
+  if (root === null) return 0;
+
+  return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1;
+}
 
 // Time Complexity O(n), touches every single node and edge.
 // Space Complexity O(n), every node gets stored in the queue.
