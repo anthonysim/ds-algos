@@ -7,8 +7,14 @@ function solveNQueens(n) {
   let res = [];
 
   function backtrack(r) {
+    let temp = [];
+
     if (r === n) {
-      res.push(JSON.parse(JSON.stringify(board)));
+      for (let row of board) {
+        temp.push(row.join(''))
+      }
+
+      res.push(temp);
       return;
     }
 
@@ -33,3 +39,5 @@ function solveNQueens(n) {
   backtrack(0);
   return res;
 }
+
+// time O(n!)
