@@ -16,7 +16,7 @@ function findMinRotated(arr) {
         }
     }
     return boundary;
-}
+} i
 
 console.log(findFirstOccurrence([30, 40, 50, 10, 20])); // index at 3
 
