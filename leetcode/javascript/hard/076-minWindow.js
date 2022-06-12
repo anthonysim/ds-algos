@@ -31,3 +31,5 @@ var minWindow = function (str, target) {
   }
   return min === Infinity ? '' : str.slice(substrStart, substrStart + min);
 };
+
+// time & space: O(N + M)
