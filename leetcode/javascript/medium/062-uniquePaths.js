@@ -8,3 +8,5 @@ function uniquePaths(m, n, memo = {}) {
   memo[key] = uniquePaths(m - 1, n, memo) + uniquePaths(m, n - 1, memo);
   return memo[key];
 };
+
+// time & space: O(N + M)
