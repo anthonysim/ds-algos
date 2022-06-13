@@ -16,7 +16,6 @@ function serialize(root) {
       res.push(null);
     }
   }
-
   return JSON.stringify(res);
 };
 

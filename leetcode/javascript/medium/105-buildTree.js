@@ -1,3 +1,9 @@
+function TreeNode(val, left, right) {
+  this.val = (val === undefined ? 0 : val)
+  this.left = (left === undefined ? null : left)
+  this.right = (right === undefined ? null : right)
+}
+
 function buildTree(preorder, inorder) {
   function tree(preorder, inorder) {
     if (preorder.length === 0) return null;
@@ -11,3 +17,5 @@ function buildTree(preorder, inorder) {
   }
   return tree(preorder, inorder);
 };
+
+// time and space: O(N)
