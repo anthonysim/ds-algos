@@ -1,6 +1,6 @@
 function explore(graph, current, visited) {
   // check if the current node has been visited
-  if (visited.has(current.toString())) return false;
+  if (visited.has(current.toString())) return;
 
   // add current node to visited ex. 0 would be [8, 1, 5]
   visited.add(current.toString());
