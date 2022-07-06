@@ -32,3 +32,6 @@ function longestPalindrome(str) {
 }
 
 console.log(longestPalindrome("babad")); // bab
+
+// time: O(n^2) because worst case at center it would expand all the way to the end
+//space: O(1)
