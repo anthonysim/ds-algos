@@ -16,8 +16,8 @@ var topKFrequent = function (nums, k) {
     buckets[value].push(key);
   }
   // fetch the larget frequest bucket first, until reach k
-  for (let i = buckets.length - 1; i > 0; i--) {
-    if (buckets[i] !== null && res.length < k) {
+  for (let i = buckets.length - 1; i >= 0 && res.length < k; i--) {
+    if (buckets[i] !== null) {
       res.push(...buckets[i]);
     }
   }
