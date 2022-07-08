@@ -1,23 +1,23 @@
 var topKFrequent = function (nums, k) {
-  let hash = {};
+  const hash = {};
   let buckets = [];
   let res = [];
 
-  for (let i = 0; i <= nums.length; i++)
+  for (let i = 0; i <= nums.length; i++) {
     buckets.push([]);
+  }
 
-  // count frequent of the elements
   for (let num of nums) {
     if (!(num in hash)) hash[num] = 0;
     hash[num] += 1;
   }
-  // put them into buckets by frequent
-  for (let [key, value] of Object.entries(hash)) {
-    buckets[value].push(key);
+
+  for (let [key, val] of Object.entries(hash)) {
+    buckets[val].push(key);
   }
-  // fetch the larget frequest bucket first, until reach k
+
   for (let i = buckets.length - 1; i >= 0 && res.length < k; i--) {
-    if (buckets[i] !== null) {
+    if (buckets[i].length !== 0) {
       res.push(...buckets[i]);
     }
   }
