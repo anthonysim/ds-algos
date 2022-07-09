@@ -13,7 +13,8 @@ function decode(str) {
     }
 
     let len = Number(str.slice(i, j));
-    res.push(str.slice(j += 1, j + len));
+    j += 1;
+    res.push(str.slice(j, j + len));
     i = j + len;
   }
 
