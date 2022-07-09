@@ -6,16 +6,16 @@ var isValidSudoku = function (board) {
       const value = board[i][j];
 
       if (value !== ".") {
-        const rowString = `${value} at row ${i}`;
-        const colString = `${value} at col ${j}`;
-        const boxString = `${value} at box ${Math.floor(i / 3)}, ${Math.floor(j / 3)}`;
+        const rowStr = `${value} at row ${i}`;
+        const colStr = `${value} at col ${j}`;
+        const boxStr = `${value} at box ${Math.floor(i / 3)}, ${Math.floor(j / 3)}`;
 
-        if (set.has(rowString) || set.has(colString) || set.has(boxString)) {
+        if (set.has(rowStr) || set.has(colStr) || set.has(boxStr)) {
           return false;
         } else {
-          set.add(rowString);
-          set.add(colString);
-          set.add(boxString);
+          set.add(rowStr);
+          set.add(colStr);
+          set.add(boxStr);
         }
       }
     }
