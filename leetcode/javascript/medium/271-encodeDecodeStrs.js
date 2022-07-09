@@ -20,3 +20,6 @@ function decode(str) {
 
   return res;
 }
+
+// decode: time O(n) space O(1)
+// encode: time O(n) space O(n)
