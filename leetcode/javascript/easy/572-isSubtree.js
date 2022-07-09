@@ -6,7 +6,6 @@ function isSameTree(s, t) {
   if (s.val === t.val) {
     return isSameTree(s.left, t.left) && isSameTree(s.right, t.right);
   }
-  return false;
 }
 
 function isSubtree(s, t) {

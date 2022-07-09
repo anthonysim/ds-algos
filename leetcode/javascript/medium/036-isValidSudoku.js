@@ -23,4 +23,4 @@ var isValidSudoku = function (board) {
   return true;
 };
 
-// time and space: O(n^2)`
+// time and space: O(n^2)
