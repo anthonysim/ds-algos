@@ -8,7 +8,7 @@ var isValidSudoku = function (board) {
       if (value !== ".") {
         const rowStr = `${value} at row ${i}`;
         const colStr = `${value} at col ${j}`;
-        const boxStr = `${value} at box ${Math.floor(i / 3)}, ${Math.floor(j / 3)}`;
+        const boxStr = `${value} at box (${Math.floor(i / 3)}, ${Math.floor(j / 3)})`;
 
         if (set.has(rowStr) || set.has(colStr) || set.has(boxStr)) {
           return false;
