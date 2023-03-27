@@ -1,27 +1,20 @@
 var topKFrequent = function (nums, k) {
-  const hash = {};
-  let buckets = [];
-  let res = [];
+  let freqMap = nums.reduce((acc, val) => {
+    acc[val] = acc[val] + 1 || 1
+    return acc;
+  }, {})
 
-  for (let i = 0; i <= nums.length; i++) {
-    buckets.push([]);
-  }
+  let result = Object.keys(freqMap)
+    .map((key) => [Number(key), freqMap[key]])
+    .sort((a, b) => b[1] - a[1]);
 
-  for (let num of nums) {
-    if (!(num in hash)) hash[num] = 0;
-    hash[num] += 1;
-  }
+  let output = [];
 
-  for (let [key, val] of Object.entries(hash)) {
-    buckets[val].push(key);
+  for (let i = 0; i < k; i++) {
+    output.push(result[i][0]);
   }
-
-  for (let i = buckets.length - 1; i >= 0 && res.length < k; i--) {
-    if (buckets[i].length !== 0) {
-      res.push(...buckets[i]);
-    }
-  }
-  return res;
+  return output
 };
 
-// time & space: O(n)
+// time: O(N Log N)
+// space: O(N)
