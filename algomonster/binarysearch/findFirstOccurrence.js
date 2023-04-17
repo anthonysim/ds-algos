@@ -20,7 +20,7 @@ function findFirstOccurrence(arr, target) {
   return boundary;
 }
 
-console.log(findFirstOccurrence([1, 3, 3, 3, 3, 6, 10, 10, 10, 100])); // index at 1
+console.log(findFirstOccurrence([1, 3, 3, 3, 3, 6, 10, 10, 10, 100], 3)); // index at 1
 
 // time: O(logN)
 // space: O(1)
