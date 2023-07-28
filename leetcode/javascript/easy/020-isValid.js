@@ -1,23 +1,21 @@
 var isValid = function (str) {
-  let res = [];
+  const hashMap = {
+    "[": "]",
+    "{": "}",
+    "(": ")",
+  }
 
-  for (let i = 0; i < str.length; i++) {
-    let char = str[i];
-    let lastItem = res[res.length - 1];
+  let stack = [];
 
-    if (char === '(' || char === '[' || char === '{') {
-      res.push(char);
-    } else if (
-      char === ')' && lastItem === '('
-      || char === ']' && lastItem === '['
-      || char === '}' && lastItem === '{'
-    ) {
-      res.pop();
-    } else {
+  for (let char of str) {
+    if (char in hashMap) {
+      stack.push(hashMap[char]);
+
+    } else if (stack.pop() !== char) {
       return false;
     }
   }
-  return res.length === 0 ? true : false;
+  return stack.length === 0;
 };
 
 // time and space: O(n)
