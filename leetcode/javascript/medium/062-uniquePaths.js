@@ -9,4 +9,4 @@ function uniquePaths(m, n, memo = {}) {
   return memo[key];
 };
 
-// time & space: O(N + M)
+// time & space: O(N * M)
