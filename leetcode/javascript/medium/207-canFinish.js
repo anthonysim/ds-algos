@@ -1,5 +1,5 @@
 function buildDirectedGraph(numCourses, edges) {
-  const graph = [...new Array(numCourses)].map(() => []);
+  const graph = new Array(n).fill().map(() => []);
 
   for (let edge of edges) {
     const [a, b] = edge;
