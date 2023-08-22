@@ -1,9 +1,11 @@
-var canAttendMeetings = function (intervals) {
-  if (intervals.length <= 1) return true;
+function canAttendMeetings(intervals) {
   intervals.sort((a, b) => a[0] - b[0]);
 
   for (let i = 0; i < intervals.length - 1; i++) {
-    if (intervals[i][1] > intervals[i + 1][0]) {
+    let curr = intervals[i];
+    let next = intervals[i + 1];
+
+    if (curr[1] > next[0]) {
       return false;
     }
   }
