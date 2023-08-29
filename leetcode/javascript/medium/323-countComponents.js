@@ -1,5 +1,5 @@
 function buildGraph(n, edges) {
-  let graph = Array.from({ length: n }, () => []);
+  const graph = new Array(n).fill().map(() => []);
 
   for (let edge of edges) {
     let [a, b] = edge;
