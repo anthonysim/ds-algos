@@ -1,19 +1,19 @@
-function wordBreak(target, wordDict, memo = {}) {
-  if (target in memo) return memo[target];
-  if (target === "") return true;
+var wordBreak = function (str, wordDict, memo = {}) {
+  if (str in memo) return memo[str];
+  if (str === "") return true;
 
   for (let word of wordDict) {
-    if (target.indexOf(word) === 0) {
-      let suffix = target.slice(word.length);
+    if (str.indexOf(word) === 0) {
+      let suffix = str.slice(word.length);
 
       if (wordBreak(suffix, wordDict, memo)) {
-        memo[target] = true;
-        return true;
+        memo[str] = true;
+        return memo[str];
       }
     }
   }
-  memo[target] = false;
-  return false;
+  memo[str] = false;
+  return memo[str];
 };
 
 console.log(wordBreak("leetcode", ["leet", "code"])) //true
