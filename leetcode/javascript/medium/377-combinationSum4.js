@@ -3,13 +3,15 @@ var combinationSum4 = function (nums, target) {
   dp[0] = 1;
 
   for (let i = 1; i < dp.length; i++) {
+
     for (let num of nums) {
+
       if (i - num >= 0) {
         dp[i] += dp[i - num];
       }
     }
   }
-  return dp[dp.length - 1];
+  return dp.at(-1);
 };
 
 // Time Complexity: O(N * M)
