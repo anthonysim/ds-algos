@@ -1,10 +1,12 @@
-function longestCommonSubsequence(text1, text2) {
-  let n = text1.length;
-  let m = text2.length;
-  let dp = new Array(n + 1).fill().map(() => new Array(m + 1).fill(0));
+var longestCommonSubsequence = function (text1, text2) {
+  let m = text1.length;
+  let n = text2.length;
 
-  for (let i = 1; i <= n; i++) {
-    for (let j = 1; j <= m; j++) {
+  let dp = new Array(m + 1).fill().map(() => new Array(n + 1).fill(0));
+
+  for (let i = 1; i <= m; i++) {
+
+    for (let j = 1; j <= n; j++) {
       // if the chars from text1 and text2 are NOT equalled to each other
       // get the max of either the number on top or to the left.
       if (text1.charAt(i - 1) !== text2.charAt(j - 1)) {
@@ -16,7 +18,7 @@ function longestCommonSubsequence(text1, text2) {
       }
     }
   }
-  return dp[n][m];
+  return dp[m][n];
 };
 
 console.log(longestCommonSubsequence("abcde", "abc")); // 3
