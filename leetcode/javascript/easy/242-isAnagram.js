@@ -1,6 +1,7 @@
-function isAnagram(s, t) {
-  s = s.split('').sort().join('');
-  t = t.split('').sort().join('');
+function helper(str) {
+  return str.split("").sort().join("");
+}
 
-  return s === t;
+var isAnagram = function (s, t) {
+  return helper(s) === helper(t);
 };

@@ -1,7 +1,6 @@
 var minWindow = function (str, target) {
   const hash = target.split('').reduce((acc, val) => {
-    if (!acc[val]) acc[val] = 0;
-    acc[val] += 1;
+    acc[val] = acc[val] + 1 || 1;
     return acc;
   }, {})
 
