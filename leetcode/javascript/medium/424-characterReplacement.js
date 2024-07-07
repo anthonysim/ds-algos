@@ -8,6 +8,7 @@ function characterReplacement(str, k) {
     if (!(char in hash)) hash[char] = 0;
     hash[char] += 1;
 
+    // in the case that the current window is not valid, shrink the window
     while ((i - start + 1) - Math.max(...Object.values(hash)) > k) {
       let item = str[start];
       hash[item] -= 1;
