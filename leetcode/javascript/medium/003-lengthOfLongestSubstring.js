@@ -28,6 +28,7 @@ var lengthOfLongestSubstring = function (str) {
   let max = 0;
 
   for (let right = 0; right < str.length; right++) {
+    // in the case that the current window is not valid, shrink the window
     while (set.has(str[right])) {
       set.delete(str[left]);
       left += 1;
