@@ -2,15 +2,18 @@ function reorderList(head) {
   let slow = head;
   let fast = head.next;
 
+  // slow and fast to find the middle of the list
   while (fast && fast.next) {
     slow = slow.next;
     fast = fast.next.next;
   }
 
-  second = slow.next;
+  // cut of second portion of linked list
+  let second = slow.next;
   slow.next = null;
   let prev = null;
 
+  // reverse the second portion of linked list
   while (second) {
     let temp = second.next;
     second.next = prev;
@@ -18,6 +21,7 @@ function reorderList(head) {
     second = temp;
   }
 
+  // merge the two linked lists
   let first = head;
   second = prev;
 
