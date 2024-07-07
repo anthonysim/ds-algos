@@ -1,11 +1,11 @@
-function setZeroes(matrix) {
-  let rowLength = matrix.length;
-  let colLength = matrix[0].length;
+var setZeroes = function (matrix) {
   let rows = [];
   let cols = [];
-  // find the locations of all the zeros
-  for (let i = 0; i < rowLength; i++) {
-    for (let j = 0; j < colLength; j++) {
+
+  for (let i = 0; i < matrix.length; i++) {
+
+    for (let j = 0; j < matrix[0].length; j++) {
+
       if (matrix[i][j] === 0) {
         rows.push(i);
         cols.push(j);
@@ -13,11 +13,12 @@ function setZeroes(matrix) {
     }
   }
 
-  // change all the rows & cols to zeros.
-  for (let i = 0; i < rowLength; i++) {
-    for (let j = 0; j < colLength; j++) {
+  for (let i = 0; i < matrix.length; i++) {
+
+    for (let j = 0; j < matrix[0].length; j++) {
+
       if (rows.includes(i) || cols.includes(j)) {
-        matrix[i][j] = 0
+        matrix[i][j] = 0;
       }
     }
   }
