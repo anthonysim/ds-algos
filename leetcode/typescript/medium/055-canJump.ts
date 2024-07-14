@@ -6,5 +6,5 @@ function canJump(nums: number[]): boolean {
       goal = i;
     }
   }
-  return goal === 0 ? true : false;
+  return goal === 0;
 };
