@@ -1,23 +1,22 @@
-function cloneGraph(node) {
+var cloneGraph = function (node) {
+  if (node === null) return null;
   // Nodes we have already copied
   const visited = {};
 
-  // DFS function to copy graph
   function dfs(node) {
-    if (!node) return node;
     // If we have seen this node before, return it
-    if (visited[node.val] != null) return visited[node.val];
-
+    if (node.val in visited) {
+      return visited[node.val];
+    }
     // Create base for copied node
-    const root = new Node(node.val);
-    // Add this copied node to group of nodes we have copied
+    let root = new Node(node.val);
     visited[node.val] = root;
-
     // Add copied neighbors to the current copied node
-    node.neighbors.forEach(n => root.neighbors.push(dfs(n)))
+    for (let neighbor of node.neighbors) {
+      root.neighbors.push(dfs(neighbor));
+    }
     return root;
   }
 
-  // Return new copied graph
   return dfs(node);
 };
