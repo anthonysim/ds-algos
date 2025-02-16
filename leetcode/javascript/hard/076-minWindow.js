@@ -1,8 +1,8 @@
 var minWindow = function (str, target) {
-  const hash = target.split('').reduce((acc, val) => {
+  const hash = target.split("").reduce((acc, val) => {
     acc[val] = acc[val] + 1 || 1;
     return acc;
-  }, {})
+  }, {});
 
   let start = 0;
   let matched = 0;
@@ -22,13 +22,13 @@ var minWindow = function (str, target) {
       }
 
       const leftChar = str[start];
-      start += 1;
-
       if (hash[leftChar] === 0) matched -= 1;
       if (leftChar in hash) hash[leftChar] += 1;
+
+      start += 1;
     }
   }
-  return min === Infinity ? '' : str.slice(substrStart, substrStart + min);
+  return min === Infinity ? "" : str.slice(substrStart, substrStart + min);
 };
 
 // time & space: O(N + M)
