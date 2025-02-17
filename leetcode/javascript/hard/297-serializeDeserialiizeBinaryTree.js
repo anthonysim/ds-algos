@@ -1,9 +1,8 @@
-// basically do a BFS then return a JSON.stringify version of the data
-function serialize(root) {
+var serialize = function (root) {
   if (root === null) return null;
 
+  const queue = [root];
   let res = [];
-  let queue = [root];
 
   while (queue.length) {
     let node = queue.shift();
@@ -19,8 +18,7 @@ function serialize(root) {
   return JSON.stringify(res);
 };
 
-// do another BFS parse the incoming data check if its null, if so return null. Assign node.left and node.right accordingly.
-function deserialize(data) {
+var deserialize = function (data) {
   data = JSON.parse(data);
 
   if (data === null) return null;
@@ -28,22 +26,20 @@ function deserialize(data) {
   let root = new TreeNode(data.shift());
   let queue = [root];
 
-  while (data.length) {
+  while (queue.length) {
     let node = queue.shift();
-
-    // Left node
     let left = data.shift();
+    let right = data.shift();
+
     if (left !== null) {
       node.left = new TreeNode(left);
       queue.push(node.left);
     }
 
-    // Right node
-    let right = data.shift();
     if (right !== null) {
       node.right = new TreeNode(right);
       queue.push(node.right);
     }
   }
   return root;
-}
+};
