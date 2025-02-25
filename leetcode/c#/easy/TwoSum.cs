@@ -12,12 +12,8 @@ public class Solution
       {
         return new int[] { hash[diff], i };
       }
-      else
-      {
         hash[nums[i]] = i;
-      }
     }
     return new int[] { };
   }
 }
-
