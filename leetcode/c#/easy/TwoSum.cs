@@ -2,7 +2,7 @@ public class Solution
 {
   public int[] TwoSum(int[] nums, int target)
   {
-    Dictionary<int, int> hash = new Dictionary<int, int>();
+    var hash = new Dictionary<int, int>();
 
     for (var i = 0; i < nums.Length; i++)
     {
@@ -17,7 +17,7 @@ public class Solution
         hash[nums[i]] = i;
       }
     }
-    return new int[2];
+    return new int[] { };
   }
 }
 
