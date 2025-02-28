@@ -1,5 +1,6 @@
 var diameterOfBinaryTree = function (root) {
   let max = 0;
+
   function dfs(root) {
     if (!root) return 0;
 
