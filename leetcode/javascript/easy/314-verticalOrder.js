@@ -1,19 +1,19 @@
 var verticalOrder = function (root) {
   if (root === null) return [];
-
-  const columnTable = new Map();
+  let table = new Map();
   const queue = [{ node: root, col: 0 }];
 
   let minCol = 0;
   let maxCol = 0;
 
-  while (queue.length > 0) {
+  while (queue.length) {
     const { node, col } = queue.shift();
 
-    if (!columnTable.has(col)) {
-      columnTable.set(col, []);
+    if (!table.has(col)) {
+      table.set(col, []);
     }
-    columnTable.get(col).push(node.val);
+
+    table.get(col).push(node.val);
 
     if (node.left) {
       queue.push({ node: node.left, col: col - 1 });
@@ -26,10 +26,9 @@ var verticalOrder = function (root) {
     }
   }
 
-  const result = [];
+  const res = [];
   for (let i = minCol; i <= maxCol; i++) {
-    result.push(columnTable.get(i));
+    res.push(table.get(i));
   }
-
-  return result;
+  return res;
 };
