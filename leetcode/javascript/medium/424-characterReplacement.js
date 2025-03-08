@@ -8,16 +8,16 @@ var characterReplacement = function (str, k) {
     if (!(rightChar in hash)) hash[rightChar] = 0;
     hash[rightChar] += 1;
 
-    while ((i - start + 1) - Math.max(...Object.values(hash)) > k) {
+    // condition when its no longer true
+    while (i - start + 1 - Math.max(...Object.values(hash)) > k) {
       let leftChar = str[start];
       hash[leftChar] -= 1;
       start += 1;
     }
-
+    // when its true
     max = Math.max(max, i - start + 1);
   }
   return max;
 };
-
 
 console.log(characterReplacement("ABAB", 2)); // 4
