@@ -1,3 +1,8 @@
+// note when a ... is used inside a function it is a rest parameter
+// it allows us to pass an indefinite number of arguments as an array
+// if a ... is used in a function call it is a spread operator
+// it allows us to spread an array into individual elements
+
 function curry(fn) {
   return function curried(...args) {
     if (args.length >= fn.length) {
