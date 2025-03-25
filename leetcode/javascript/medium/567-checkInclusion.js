@@ -15,9 +15,8 @@ var checkInclusion = function (str1, str2) {
 
     while (i - start + 1 > str1.length) {
       let leftChar = str2[start];
-      start += 1;
-
       if (leftChar in hash) hash[leftChar] += 1;
+      start += 1;
     }
     if (Object.values(hash).every(num => num === 0)) return true;
   }
