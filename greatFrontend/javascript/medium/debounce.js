@@ -7,7 +7,7 @@ export default function debounce(func, delay) {
 
     timer = setTimeout(() => {
       // Step 4: Set a new timer
-      func(...args); // Step 5: After 'delay', call the actual function with the right 'this' and arguments
+      func.apply(this, args); // Step 5: Call the original function with the correct context and arguments
     }, delay);
   };
 }
