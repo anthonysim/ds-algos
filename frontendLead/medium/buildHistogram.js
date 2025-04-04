@@ -16,9 +16,8 @@ const HistogramBuilder = {
 
     const leftAxisValues = new Set();
 
-    for (const key in data) {
+    for (const val in Object.values(data).sort((a, b) => b - a)) {
       // set y axis values
-      const val = data[key];
       if (!leftAxisValues.has(val)) {
         leftAxisValues.add(val);
         const keyElement = document.createElement("div");
